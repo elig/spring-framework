@@ -1,9 +1,15 @@
 buildscript {
-	repositories {
+/**	repositories {
 			maven { url "http://repo.springsource.org/plugins-release" }
 		maven { url "http://jcenter.bintray.com" }
 	
-	}
+	}*/
+	repositories {
+		maven { url "https://eliserver106.artifactoryonline.com/eliserver106/bintray" }
+		credentials {
+                   username "${artifactory_user}"
+                   password "${artifactory_password}"
+        }
 	dependencies {
 		classpath("org.springframework.build.gradle:propdeps-plugin:0.0.3")
 		classpath("org.springframework.build.gradle:docbook-reference-plugin:0.2.4")
@@ -63,16 +69,16 @@ configure(allprojects) { project ->
 		systemProperty("testGroups", project.properties.get("testGroups"))
 	}
 
-	repositories {
+/**	repositories {
 		maven { url "http://repo.springsource.org/libs-release" }
 		
-	/**	maven { url "https://eliserver106.artifactoryonline.com/eliserver106/bintray" }
+		maven { url "https://eliserver106.artifactoryonline.com/eliserver106/bintray" }
 		credentials {
                    username "${artifactory_user}"
                    password "${artifactory_password}"
-        }*/
+        }
 		
-	}
+	}*/
 
 	dependencies {
 		testCompile("junit:junit:${junitVersion}")
