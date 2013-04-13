@@ -63,11 +63,13 @@ configure(allprojects) { project ->
 	}
 
 	repositories {
-		maven { url "https://eliserver106.artifactoryonline.com/eliserver106/bintray" }
+		maven { url "http://repo.springsource.org/libs-release" }
+		
+	/**	maven { url "https://eliserver106.artifactoryonline.com/eliserver106/bintray" }
 		credentials {
                    username "${artifactory_user}"
                    password "${artifactory_password}"
-        }
+        }*/
 		
 	}
 
