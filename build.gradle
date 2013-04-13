@@ -62,9 +62,14 @@ configure(allprojects) { project ->
 		systemProperty("testGroups", project.properties.get("testGroups"))
 	}
 
-	/**repositories {
-		maven { url "http://repo.springsource.org/libs-release" }
-	}*/
+	repositories {
+		maven { url "https://eliserver106.artifactoryonline.com/eliserver106/bintray" }
+		credentials {
+                   username "${artifactory_user}"
+                   password "${artifactory_password}"
+        }
+		
+	}
 
 	dependencies {
 		testCompile("junit:junit:${junitVersion}")
